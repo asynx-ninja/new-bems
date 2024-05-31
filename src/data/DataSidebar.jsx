@@ -1,4 +1,6 @@
+import eaa from "../admin/events/events.page"
 export const DataSidebar = [
+
     {
         link: '/',
         type: "menu",
@@ -22,7 +24,7 @@ export const DataSidebar = [
         badge: null,
     },
     {
-        link: '/',
+        link: '/events_page',
         type: "menu",
         icon: (<svg
             xmlns="http://www.w3.org/2000/svg"
