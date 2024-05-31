@@ -1,13 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const SidebarItem = ({ item, setIsSideNavOpen }) => {
     return (
         <li className="px-3">
             {
                 item.type === 'menu' ?
-                    <a
+                    <Link
                         onClick={() => setIsSideNavOpen(false)}
-                        href="#"
+                        to={item.link}
                         className="flex items-center gap-3 rounded p-3 text-slate-700 transition-colors hover:bg-emerald-50 hover:text-emerald-500 focus:bg-emerald-50 aria-[current=page]:bg-emerald-50 aria-[current=page]:text-emerald-500 "
                     >
                         <div className="flex items-center self-center">
@@ -20,7 +21,7 @@ const SidebarItem = ({ item, setIsSideNavOpen }) => {
                             <span className="inline-flex items-center justify-center rounded-full bg-pink-100 px-2 text-xs text-pink-500 ">
                                 {item.badge}<span className="sr-only"> new notifications</span>
                             </span>}
-                    </a> :
+                    </Link> :
                     <details className="flex items-center gap-3 rounded p-3 text-slate-700 transition-colors hover:bg-emerald-50 group">
                         <summary className="[&::-webkit-details-marker]:hidden relative list-none cursor-pointer text-slate-700 focus-visible:outline-none transition-colors duration-300 group-hover:text-slate-900 ">
                             <div className="flex items-center gap-3  hover:text-emerald-500 focus:bg-emerald-50 aria-[current=page]:bg-emerald-50 aria-[current=page]:text-emerald-500 ">
@@ -40,7 +41,8 @@ const SidebarItem = ({ item, setIsSideNavOpen }) => {
                         {/* BUTTONS */}
                         <ul className="mt-2">
                             {item.children.map((menu, idx) => <li key={idx}>
-                                <a
+                                <Link
+                                    to={menu.link}
                                     onClick={() => setIsSideNavOpen(false)}
                                     href="#"
                                     className="flex items-center gap-3 rounded p-3 text-slate-700 transition-colors hover:bg-emerald-50 hover:text-emerald-500 focus:bg-emerald-50 aria-[current=page]:bg-emerald-50 aria-[current=page]:text-emerald-500 "
@@ -55,7 +57,7 @@ const SidebarItem = ({ item, setIsSideNavOpen }) => {
                                         <span className="inline-flex items-center justify-center rounded-full bg-pink-100 px-2 text-xs text-pink-500 ">
                                             {menu.badge}<span className="sr-only"> new notifications</span>
                                         </span>}
-                                </a>
+                                </Link>
                             </li>)}
                         </ul>
                     </details>

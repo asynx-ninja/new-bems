@@ -1,5 +1,6 @@
 export const DataSidebar = [
     {
+        link: '/',
         type: "menu",
         icon: (<svg
             xmlns="http://www.w3.org/2000/svg"
@@ -21,6 +22,7 @@ export const DataSidebar = [
         badge: null,
     },
     {
+        link: '/',
         type: "menu",
         icon: (<svg
             xmlns="http://www.w3.org/2000/svg"
@@ -42,6 +44,7 @@ export const DataSidebar = [
         badge: 2,
     },
     {
+        link: '/services',
         type: "menu",
         icon: (<svg
             xmlns="http://www.w3.org/2000/svg"
@@ -63,6 +66,7 @@ export const DataSidebar = [
         badge: 2,
     },
     {
+        link: '/',
         type: "dropdown",
         icon: (<svg
             xmlns="http://www.w3.org/2000/svg"
@@ -82,6 +86,7 @@ export const DataSidebar = [
         </svg>),
         children: [
             {
+                link: "/",
                 icon: (<svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -102,6 +107,7 @@ export const DataSidebar = [
                 badge: null,
             },
             {
+                link: "/",
                 icon: (<svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -122,6 +128,7 @@ export const DataSidebar = [
                 badge: null,
             },
             {
+                link: "/",
                 icon: (<svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -142,6 +149,7 @@ export const DataSidebar = [
                 badge: null,
             },
             {
+                link: "/",
                 icon: (<svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -166,6 +174,7 @@ export const DataSidebar = [
         badge: null,
     },
     {
+        link: '/',
         type: "menu",
         icon: (<svg
             xmlns="http://www.w3.org/2000/svg"
@@ -187,6 +196,7 @@ export const DataSidebar = [
         badge: null,
     },
     {
+        link: '/',
         type: "menu",
         icon: (<svg
             xmlns="http://www.w3.org/2000/svg"
@@ -208,6 +218,7 @@ export const DataSidebar = [
         badge: null,
     },
     {
+        link: '/',
         type: "menu",
         icon: (<svg
             xmlns="http://www.w3.org/2000/svg"
@@ -229,6 +240,7 @@ export const DataSidebar = [
         badge: 2,
     },
     {
+        link: '/',
         type: "menu",
         icon: (<svg
             xmlns="http://www.w3.org/2000/svg"

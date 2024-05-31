@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import Table from './Table';
-import { DataTable } from "../../data/DataTable"
+import { DataTable } from '../../../../data/DataTable';
 
 const Tabs = () => {
     const [data, setData] = useState([])
