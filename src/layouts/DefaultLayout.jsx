@@ -11,6 +11,7 @@ import { useThemeContext } from "../hooks/useThemeContext";
 import { Link, useLocation } from "react-router-dom";
 
 export default function DefaultLayout({ component }) {
+  const acc_type = "Admin"
   const url = useLocation().pathname.split("/")[1];
   const [isSideNavOpen, setIsSideNavOpen] = useState(false)
   const { theme } = useThemeContext();
