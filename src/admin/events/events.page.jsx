@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom'
 import Table from './manage_events/table/Table'
 import { useState } from 'react'
 import { DataTable } from '../../data/DataTable'
+import { useThemeContext } from '../../hooks/useThemeContext'
 
 const EventsPage = () => {
+  const { theme } = useThemeContext();
   const [data, setData] = useState(DataTable);
   const [isOpen, setIsOpen] = useState(false)
   const [isOpen1, setIsOpen1] = useState(false)
@@ -26,11 +28,11 @@ const EventsPage = () => {
   const Layout = () => (
     <div>
       <div className='mb-3 flex justify-between items-end'>
-        <h2 className="flex flex-col items-start text-3xl font-medium lg:items-center md:flex-row text-slate-700">Events Management</h2>
-        <Link to="/archived_events" className='underline text-blue-500 font-medium' href="">Go to Archived Events</Link>
+        <h2 className="flex flex-col items-start text-3xl font-medium lg:items-center md:flex-row " style={{ color: theme !== null ? theme.text : "rgb(51 65 85)" }}>Events Management</h2>
+        <Link to="/archived_events" className='underline text-blue-500 font-medium' style={{ color: theme !== null ? theme.secondary : "rgb(59 130 246)" }}>Go to Archived Events</Link>
       </div>
       {/* TABLE OR TABS */}
-      <div className='flex lg:justify-between lg:items-center flex-col lg:flex-row w-full mt-2 lg:mt-0'>
+      <div className='flex lg:justify-between lg:items-center flex-col lg:flex-row w-full my-2 lg:mt-0'>
         {/* DROPDOWN */}
         <div className='flex justify-start items-start gap-1 w-full lg:w-1/2'>
           <div className="relative inline-flex z-0" id="dropdown">

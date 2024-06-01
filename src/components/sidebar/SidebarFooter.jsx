@@ -1,11 +1,24 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+import { useThemeContext } from '../../hooks/useThemeContext';
 
 const SidebarFooter = () => {
+    const { theme } = useThemeContext();
+    const style_maker = {
+        "--link-color": theme !== null ? theme.text : "rgb(51 65 85)",
+        "--link-bg-color": theme !== null ? theme.neutral : "rgb(236 253 245 / 1)",
+        "--link-hover-color": theme !== null ? theme.text : "rgb(16 185 129 / 1)",
+        "--active-el-color": theme !== null ? theme.text : "rgb(16 185 129 / 1)",
+        "--active-el-bg-color": theme !== null ? theme.accent : "rgb(236 253 245 / 1)",
+        "--active-el-hover-color": theme !== null ? theme.neutral : "rgb(16 185 129 / 1)",
+    };
+
     return (
-        <footer className="border-t border-slate-200 p-3">
-            <a
-                href="#"
-                className="flex items-center gap-3 rounded p-3 text-slate-900 transition-colors hover:text-emerald-500 "
+        <footer className="p-3" style={{ borderTop: `1px solid ${theme !== null ? theme.text : "#eeeeee"}` }}>
+            <Link
+                to="/"
+                className="flex items-center gap-3 rounded p-3 link"
+                style={style_maker}
             >
                 <div className="flex items-center self-center ">
                     <svg
@@ -28,7 +41,7 @@ const SidebarFooter = () => {
                 <div className="flex w-full flex-1 flex-col items-start justify-center gap-0 overflow-hidden truncate text-sm font-medium">
                     Logout
                 </div>
-            </a>
+            </Link>
         </footer>
     )
 }

@@ -46,7 +46,7 @@ export const AdminDataSidebar = [
         badge: 2,
     },
     {
-        link: '/services',
+        link: '/',
         type: "menu",
         icon: (<svg
             xmlns="http://www.w3.org/2000/svg"

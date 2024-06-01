@@ -2,3 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+.link, .dropdown-item {
+    color: var(--link-color)
+}
+
+.link:hover, .dropdown-item:hover {
+    background-color: var(--link-bg-color);
+    color: var(--link-hover-color);
+}
+
+.link:focus, .dropdown-item:focus {
+    background-color: var(--link-bg-color);
+    color: var(--link-hover-color);
+}
+
+.active-el {
+    color: var(--active-el-color)
+}
+
+.active-el:focus {
+    background-color: var(--active-el-bg-color);
+    color: var(--active-el-hover-color);
+}
+
+nav a.active{
+  color: green;
+}
+
+.badge{
+    background-color: var(--badge-bg-color);
+    color: var(--badge-color)
+}

@@ -3,19 +3,23 @@ import NotificationItem from './NotificationItem'
 import NotificationHeader from './NotificationHeader'
 import NotificationFooter from './NotificationFooter'
 import { DataNotif } from '../../data/DataNotif'
+import { useThemeContext } from '../../hooks/useThemeContext'
 
 const Notification = () => {
     const [isOpen, setIsOpen] = useState(false)
     const [data, setData] = useState(DataNotif)
     const [isClick, setIsClick] = useState(false)
+    const { theme } = useThemeContext();
+
 
     return (
         <div className='relative inline-flex'>
             <button
-                className="relative inline-flex items-center text-sm font-medium text-center text-gray-500  focus:outline-none "
+                className="relative inline-flex items-center text-sm font-medium text-center   focus:outline-none "
                 type="button"
                 onClick={() => setIsOpen(!isOpen)}
                 aria-expanded={isOpen ? " true" : "false"}
+                style={{ color: theme !== null ? theme.text : "gray" }}
             >
                 <svg
                     className="w-5 h-5"

@@ -1,16 +1,25 @@
 import React from 'react'
+import { useThemeContext } from '../../../../hooks/useThemeContext'
 
 const Pagination = () => {
+    const { theme } = useThemeContext();
+    const style_maker = {
+        "--link-color": theme !== null ? theme.text : "rgb(51 65 85)",
+        "--link-bg-color": theme !== null ? theme.neutral : "rgb(236 253 245 / 1)",
+        "--link-hover-color": theme !== null ? theme.text : "rgb(16 185 129 / 1)",
+    };
+
     return (
-        <div className='flex justify-between items-center mt-4 md:mt-1'>
-            <span className="text-gray-600 text-sm">Showing 31 to 40 of 57 results</span>
+        <div className='flex justify-between items-center mt-4 '>
+            <span className="text-sm" style={{ color: theme !== null ? theme.text : "rgb(51 65 85)" }}>Showing 31 to 40 of 57 results</span>
             <nav role="navigation" aria-label="Pagination Navigation">
                 <ul className="flex list-none items-center justify-center divide-x divide-slate-200 overflow-hidden rounded border border-slate-200 text-sm text-slate-700">
                     <li>
                         <a
                             href="javascript:void(0)"
                             aria-label="Goto Page 1"
-                            className="inline-flex h-10 items-center justify-center gap-4 stroke-slate-700 px-4 text-sm font-medium text-slate-700 transition duration-300 hover:bg-emerald-50 hover:stroke-emerald-500 hover:text-emerald-500 focus:bg-emerald-50 focus:stroke-emerald-600 focus:text-emerald-600 focus-visible:outline-none"
+                            className="inline-flex h-10 items-center justify-center gap-4 px-4 text-sm font-medium  transition duration-300 focus-visible:outline-none link"
+                            style={style_maker}
                         >
                             <span className="order-2 md:sr-only">Prev</span>
                             <svg
@@ -33,58 +42,25 @@ const Pagination = () => {
                             </svg>
                         </a>
                     </li>
-
-                    <li>
-                        <a
-                            href="javascript:void(0)"
-                            aria-label="Goto Page 1"
-                            className="hidden h-10 items-center justify-center stroke-slate-700 px-4 text-sm font-medium text-slate-700 transition duration-300 hover:bg-emerald-50 hover:text-emerald-500 focus:bg-emerald-50 focus:text-emerald-600 focus-visible:outline-none md:inline-flex"
-                        >
-                            1
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="javascript:void(0)"
-                            aria-label="Goto Page 2"
-                            className="hidden h-10 items-center justify-center stroke-slate-700 px-4 text-sm font-medium text-slate-700 transition duration-300 hover:bg-emerald-50 hover:text-emerald-500 focus:bg-emerald-50 focus:text-emerald-600 focus-visible:outline-none md:inline-flex"
-                        >
-                            2
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="javascript:void(0)"
-                            className="hidden h-10 items-center justify-center whitespace-nowrap bg-emerald-500 px-4 text-sm font-medium text-white transition duration-300 hover:bg-emerald-600 focus:bg-emerald-700 focus-visible:outline-none md:inline-flex"
-                            aria-label="Current Page, Page 3"
-                            aria-current="true"
-                        >
-                            ...
-                        </a>
-                    </li>
+                    {
+                        ["", "", ""].map((_, idx) => (
+                            <li key={idx}>
+                                <a
+                                    href="/"
+                                    className="hidden h-10 items-center justify-center px-4 text-sm font-medium transition duration-300 focus-visible:outline-none md:inline-flex link"
+                                    style={style_maker}
+                                >
+                                    {idx + 1}
+                                </a>
+                            </li>
+                        ))
+                    }
                     <li>
                         <a
                             href="javascript:void(0)"
                             aria-label="Goto Page 4"
-                            className="hidden h-10 items-center justify-center stroke-slate-700 px-4 text-sm font-medium text-slate-700 transition duration-300 hover:bg-emerald-50 hover:text-emerald-500 focus:bg-emerald-50 focus:text-emerald-600 focus-visible:outline-none md:inline-flex"
-                        >
-                            4
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="javascript:void(0)"
-                            aria-label="Goto Page 5"
-                            className="hidden h-10 items-center justify-center stroke-slate-700 px-4 text-sm font-medium text-slate-700 transition duration-300 hover:bg-emerald-50 hover:text-emerald-500 focus:bg-emerald-50 focus:text-emerald-600 focus-visible:outline-none md:inline-flex"
-                        >
-                            5
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="javascript:void(0)"
-                            aria-label="Goto Page 4"
-                            className="inline-flex h-10 items-center justify-center gap-4 stroke-slate-700 px-4 text-sm font-medium text-slate-700 transition duration-300 hover:bg-emerald-50 hover:stroke-emerald-500 hover:text-emerald-500 focus:bg-emerald-50 focus:stroke-emerald-600 focus:text-emerald-600 focus-visible:outline-none"
+                            className="inline-flex h-10 items-center justify-center gap-4 px-4 text-sm font-medium  transition duration-300 focus-visible:outline-none link"
+                            style={style_maker}
                         >
                             <span className="md:sr-only">Next</span>
                             <svg

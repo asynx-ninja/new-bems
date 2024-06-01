@@ -7,6 +7,8 @@ import Dashboard from "../admin/dashboard/dashboard";
 import StaffEventsPage from "../staff/brgy_events/staff.events.page";
 import ViewStaffEvent from "../staff/brgy_events/view.staff.event";
 import ArchivedStaffEventsPage from "../staff/brgy_events/archived.events";
+import ThemesPage from "../components/themes/themes.page";
+
 const pages = [
     { path: '/', element: <Dashboard /> },
     { path: '/events_page', element: <EventsPage /> },
@@ -15,6 +17,7 @@ const pages = [
     { path: '/staff_events_page', element: <StaffEventsPage /> },
     { path: '/view_staff_event', element: <ViewStaffEvent /> },
     { path: '/archived_staff_events', element: <ArchivedStaffEventsPage /> },
+    { path: '/themes', element: <ThemesPage /> }
 ];
 
 const Route = createBrowserRouter([

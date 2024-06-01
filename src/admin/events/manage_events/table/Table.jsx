@@ -37,10 +37,10 @@ const Table = ({ filtered }) => {
     return (
         <>
             {/*<!-- Component: Underline Table --> */}
-            <div className="w-full overflow-auto h-[37em]">
+            <div className="w-full overflow-auto h-[36.2em] bg-slate-100">
                 <table className="w-full text-left border-collapse rounded w-overflow-x-auto " cellSpacing="0">
                     <tbody>
-                        <tr className="border-b border-slate-300 bg-slate-100">
+                        <tr className="border-b border-slate-300 bg-slate-200">
                             <th scope="col" className="h-12 px-6 text-sm font-medium stroke-slate-700 text-slate-700 ">
                                 <input
                                     className="peer mt-1 h-4 w-4 cursor-pointer appearance-none rounded border-2 border-slate-400 bg-white transition-colors checked:border-emerald-500 checked:bg-emerald-500 checked:hover:border-emerald-600 checked:hover:bg-emerald-600 focus:outline-none checked:focus:border-emerald-700 checked:focus:bg-emerald-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-slate-100 disabled:bg-slate-50"

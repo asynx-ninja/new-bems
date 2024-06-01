@@ -1,9 +1,12 @@
 import React from 'react'
 import Notification from '../notification/Notification'
+import { useThemeContext } from '../../hooks/useThemeContext'
 
 const TopHeader = ({ isSideNavOpen, setIsSideNavOpen }) => {
+    const { theme } = useThemeContext();
+
     return (
-        <nav className="sticky top-0 z-10 bg-white border-b border-gray-200 left-0 right-0">
+        <nav className="sticky top-0 z-10 left-0 right-0 link" style={{ backgroundColor: theme !== null ? theme.bg_primary : "white", borderBottom: `1px solid ${theme !== null ? theme.text : "#eeeeee"}` }} >
             <div className="px-3 py-3 lg:px-5 lg:pl-3">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center justify-start rtl:justify-end">
@@ -33,7 +36,9 @@ const TopHeader = ({ isSideNavOpen, setIsSideNavOpen }) => {
                                 className="h-8 me-3"
                                 alt="FlowBite Logo"
                             />
-                            <span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap text-black">
+                            <span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap"
+                                style={{ color: theme !== null ? theme.text : "rgb(51 65 85)" }}
+                            >
                                 Municipality of Rodriguez, Rizal
                             </span>
                         </a>

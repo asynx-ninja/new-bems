@@ -1,7 +1,22 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import { useThemeContext } from '../../hooks/useThemeContext'
+import "../../index.css"
 
 const SidebarItem = ({ item, setIsSideNavOpen }) => {
+    const url = useLocation().pathname.split("/")[1];
+    const { theme } = useThemeContext();
+    const style_maker = {
+        "--link-color": theme !== null ? theme.text : "rgb(51 65 85)",
+        "--link-bg-color": theme !== null ? theme.neutral : "rgb(236 253 245 / 1)",
+        "--link-hover-color": theme !== null ? theme.text : "rgb(16 185 129 / 1)",
+        "--active-el-color": theme !== null ? theme.text : "rgb(51 65 85)",
+        "--active-el-bg-color": theme !== null ? theme.accent : "rgb(236 253 245 / 1)",
+        "--active-el-hover-color": theme !== null ? theme.neutral : "rgb(16 185 129 / 1)",
+        "--badge-bg-color": theme !== null ? theme.secondary : "rgb(252 231 243)",
+        "--badge-color": theme !== null ? theme.bg_primary : "rgb(236 72 153)",
+    };
+
     return (
         <li className="px-3">
             {
@@ -9,7 +24,8 @@ const SidebarItem = ({ item, setIsSideNavOpen }) => {
                     <Link
                         onClick={() => setIsSideNavOpen(false)}
                         to={item.link}
-                        className="flex items-center gap-3 rounded p-3 text-slate-700 transition-colors hover:bg-emerald-50 hover:text-emerald-500 focus:bg-emerald-50 aria-[current=page]:bg-emerald-50 aria-[current=page]:text-emerald-500 "
+                        className={`${url.includes(item.link) ? 'active-el' : ''} flex items-center gap-3 rounded p-3 transition-colors link`}
+                        style={style_maker}
                     >
                         <div className="flex items-center self-center">
                             {item.icon}
@@ -18,17 +34,19 @@ const SidebarItem = ({ item, setIsSideNavOpen }) => {
                             {item.name}
                         </div>
                         {item.badge &&
-                            <span className="inline-flex items-center justify-center rounded-full bg-pink-100 px-2 text-xs text-pink-500 ">
+                            <span className="badge inline-flex items-center justify-center rounded-full px-2 text-xs"
+                                style={style_maker}
+                            >
                                 {item.badge}<span className="sr-only"> new notifications</span>
                             </span>}
                     </Link> :
-                    <details className="flex items-center gap-3 rounded p-3 text-slate-700 transition-colors hover:bg-emerald-50 group">
-                        <summary className="[&::-webkit-details-marker]:hidden relative list-none cursor-pointer text-slate-700 focus-visible:outline-none transition-colors duration-300 group-hover:text-slate-900 ">
-                            <div className="flex items-center gap-3  hover:text-emerald-500 focus:bg-emerald-50 aria-[current=page]:bg-emerald-50 aria-[current=page]:text-emerald-500 ">
+                    <details className="flex items-center gap-3 rounded p-3  transition-colors group link" style={style_maker}>
+                        <summary className="[&::-webkit-details-marker]:hidden relative list-none cursor-pointer focus-visible:outline-none transition-colors duration-300">
+                            <div className="flex items-center gap-3 link" style={style_maker}>
                                 <div className="flex items-center self-center ">
                                     {item.icon}
                                 </div>
-                                <div className="flex w-full flex-1 flex-col items-start justify-center gap-0 overflow-hidden truncate text-sm hover:text-emerald-500">
+                                <div className="flex w-full flex-1 flex-col items-start justify-center gap-0 overflow-hidden truncate text-sm">
                                     {item.name}
                                 </div>
                             </div>
@@ -44,8 +62,8 @@ const SidebarItem = ({ item, setIsSideNavOpen }) => {
                                 <Link
                                     to={menu.link}
                                     onClick={() => setIsSideNavOpen(false)}
-                                    href="#"
-                                    className="flex items-center gap-3 rounded p-3 text-slate-700 transition-colors hover:bg-emerald-50 hover:text-emerald-500 focus:bg-emerald-50 aria-[current=page]:bg-emerald-50 aria-[current=page]:text-emerald-500 "
+                                    className={`${url.includes(item.link) ? 'active-el' : ''} flex items-center gap-3 rounded p-3 transition-colors dropdown_item`}
+                                    style={style_maker}
                                 >
                                     <div className="flex items-center self-center ">
                                         {menu.icon}
@@ -54,7 +72,7 @@ const SidebarItem = ({ item, setIsSideNavOpen }) => {
                                         {menu.name}
                                     </div>
                                     {menu.badge &&
-                                        <span className="inline-flex items-center justify-center rounded-full bg-pink-100 px-2 text-xs text-pink-500 ">
+                                        <span className="inline-flex items-center justify-center rounded-full px-2 text-xs badge" style={style_maker}>
                                             {menu.badge}<span className="sr-only"> new notifications</span>
                                         </span>}
                                 </Link>
