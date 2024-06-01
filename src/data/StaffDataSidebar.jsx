@@ -1,6 +1,5 @@
 
 export const StaffDataSidebar = [
-
     {
         link: '/',
         type: "menu",
@@ -195,28 +194,6 @@ export const StaffDataSidebar = [
             />
         </svg>),
         name: 'Manage Barangay',
-        badge: null,
-    },
-    {
-        link: '/',
-        type: "menu",
-        icon: (<svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="currentColor"
-            className="h-6 w-6"
-            aria-label="Dashboard icon"
-            role="graphics-symbol"
-        >
-            <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M3 15v4m6-6v6m6-4v4m6-6v6M3 11l6-5 6 5 5.5-5.5"
-            />
-        </svg>),
-        name: 'Reports',
         badge: null,
     },
     {

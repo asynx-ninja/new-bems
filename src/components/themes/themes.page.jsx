@@ -1,6 +1,6 @@
 import React from 'react'
 import DefaultLayout from '../../layouts/DefaultLayout'
-import { themes, neutral } from "../../data/DataTheme"
+import { themes } from "../../data/DataTheme"
 import { useState, useEffect } from 'react'
 import { useThemeContext } from '../../hooks/useThemeContext'
 import { memo } from 'react'
@@ -45,11 +45,11 @@ const ThemesPage = () => {
                             <button key={idx} onClick={handleDefault}>
                                 <div className='flex flex-col justify-start items-start shadow-md bg-white border border-white'>
                                     <ul className='flex justify-center items-center w-full'>
-                                        <li className='h-36 w-full bg-red-100'></li>
-                                        <li className='h-36 w-full bg-red-200'></li>
-                                        <li className='h-36 w-full bg-red-300'></li>
-                                        <li className='h-36 w-full bg-red-400'></li>
-                                        <li className='h-36 w-full bg-red-500'></li>
+                                        <li className='h-36 w-full bg-[#ec4899]'></li>
+                                        <li className='h-36 w-full bg-white'></li>
+                                        <li className='h-36 w-full bg-[#fce7f3]'></li>
+                                        <li className='h-36 w-full bg-[#10b981]'></li>
+                                        <li className='h-36 w-full bg-[#334155]'></li>
                                     </ul>
                                     <span className='p-4 font-medium'>Default</span>
                                 </div>

@@ -26,7 +26,19 @@ export default function DefaultLayout({ component }) {
     "--badge-color": theme !== null ? theme.bg_primary : "rgb(236 72 153)",
   };
 
-  return (  
+  const SidebarAccountType = (acc_type) => {
+    switch (acc_type) {
+      case "Admin": case "Head Admin":
+        return AdminDataSidebar;
+      case "Brgy Staff": case "Brgy Admin":
+        return StaffDataSidebar;
+      case "Resident":
+        break;
+      // return AdminDataSidebar;
+    }
+  }
+
+  return (
     <>
       <div className="">
         <aside
@@ -43,23 +55,14 @@ export default function DefaultLayout({ component }) {
           >
             <div>
               <ul className="flex flex-1 flex-col gap-1 py-3">
-                {acc_type === "Admin" || acc_type === "Head Admin"
-                  ? AdminDataSidebar.map((item, idx) => (
-                    <SidebarItem
-                      key={idx}
-                      item={item}
-                      setIsSideNavOpen={setIsSideNavOpen}
-                      acc_type={acc_type}
-                    />
-                  ))
-                  : StaffDataSidebar.map((item, idx) => (
-                    <SidebarItem
-                      key={idx}
-                      item={item}
-                      setIsSideNavOpen={setIsSideNavOpen}
-                      acc_type={acc_type}
-                    />
-                  ))}
+                {SidebarAccountType(acc_type).map((item, idx) => (
+                  <SidebarItem
+                    key={idx}
+                    item={item}
+                    setIsSideNavOpen={setIsSideNavOpen}
+                    acc_type={acc_type}
+                  />
+                ))}
               </ul>
             </div>
             <div style={{ borderTop: `1px solid ${theme !== null ? theme.text : "#eeeeee"}` }}>

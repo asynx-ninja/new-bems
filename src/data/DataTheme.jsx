@@ -23,5 +23,3 @@ export const themes = [
     },
     null
 ]
-
-export const neutral = null

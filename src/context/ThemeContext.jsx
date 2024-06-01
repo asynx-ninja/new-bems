@@ -8,12 +8,6 @@ export const ThemeReducer = (state, action) => {
             return {
                 theme: action.payload,
             };
-        case "UPDATE_THEME": {
-            return {
-                ...state,
-                theme: action.payload,
-            };
-        }
         default:
             return state;
     }

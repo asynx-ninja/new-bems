@@ -62,7 +62,7 @@ const SidebarItem = ({ item, setIsSideNavOpen }) => {
                                 <Link
                                     to={menu.link}
                                     onClick={() => setIsSideNavOpen(false)}
-                                    className={`${url.includes(item.link) ? 'active-el' : ''} flex items-center gap-3 rounded p-3 transition-colors dropdown_item`}
+                                    className={`${url.includes(menu.link) ? 'active-el' : ''} flex items-center gap-3 rounded p-3 transition-colors link`}
                                     style={style_maker}
                                 >
                                     <div className="flex items-center self-center ">

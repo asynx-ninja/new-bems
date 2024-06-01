@@ -25,10 +25,6 @@
     color: var(--active-el-hover-color);
 }
 
-nav a.active{
-  color: green;
-}
-
 .badge{
     background-color: var(--badge-bg-color);
     color: var(--badge-color)
