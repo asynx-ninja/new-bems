@@ -10,9 +10,11 @@ import Footer from "../components/header-footer/Footer";
 import { useThemeContext } from "../hooks/context/useThemeContext";
 import { Link, useLocation } from "react-router-dom";
 import useGetEvent from "../hooks/custom/useGetEvent";
+import { useAuthContext } from "../hooks/context/useAuthContext";
 
 export default function DefaultLayout({ component }) {
-  const acc_type = "Admin"
+  const { credentials } = useAuthContext();
+
   const url = useLocation().pathname.split("/")[1];
   const [isSideNavOpen, setIsSideNavOpen] = useState(false)
   const { theme } = useThemeContext();
@@ -31,10 +33,8 @@ export default function DefaultLayout({ component }) {
     switch (acc_type) {
       case "Admin": case "Head Admin":
         return AdminDataSidebar;
-      case "Brgy Staff": case "Brgy Admin":
+      case "Barangay Staff": case "Barangay Admin":
         return StaffDataSidebar;
-      case "Resident":
-        break;
       // return AdminDataSidebar;
     }
   }
@@ -56,12 +56,11 @@ export default function DefaultLayout({ component }) {
           >
             <div>
               <ul className="flex flex-1 flex-col gap-1 py-3">
-                {SidebarAccountType(acc_type).map((item, idx) => (
+                {SidebarAccountType(credentials.user.account_type).map((item, idx) => (
                   <SidebarItem
                     key={idx}
                     item={item}
                     setIsSideNavOpen={setIsSideNavOpen}
-                    acc_type={acc_type}
                   />
                 ))}
               </ul>

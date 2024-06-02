@@ -1,9 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { useThemeContext } from '../../hooks/context/useThemeContext';
+import { useAuth } from '../../hooks/custom/useAuth';
 
 const SidebarFooter = () => {
     const { theme } = useThemeContext();
+    const { useLogout } = useAuth();
+
     const style_maker = {
         "--link-color": theme !== null ? theme.text : "rgb(51 65 85)",
         "--link-bg-color": theme !== null ? theme.neutral : "rgb(236 253 245 / 1)",
@@ -13,10 +16,14 @@ const SidebarFooter = () => {
         "--active-el-hover-color": theme !== null ? theme.neutral : "rgb(16 185 129 / 1)",
     };
 
+    const handleLogout = () => {
+        useLogout();
+    }
+
     return (
         <footer className="p-3" style={{ borderTop: `1px solid ${theme !== null ? theme.text : "#eeeeee"}` }}>
-            <Link
-                to="/"
+            <button
+                onClick={handleLogout}
                 className="flex items-center gap-3 rounded p-3 link"
                 style={style_maker}
             >
@@ -41,7 +48,7 @@ const SidebarFooter = () => {
                 <div className="flex w-full flex-1 flex-col items-start justify-center gap-0 overflow-hidden truncate text-sm font-medium">
                     Logout
                 </div>
-            </Link>
+            </button>
         </footer>
     )
 }

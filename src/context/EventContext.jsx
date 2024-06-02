@@ -40,9 +40,7 @@ export const EventContextProvider = ({ children }) => {
             dispatch({ type: "SET_EVENT", payload: event })
         }
     }, [])
-
-    console.log(state)
-
+    
     return (
         <EventContext.Provider value={{ ...state, dispatch }}>
             {children}
