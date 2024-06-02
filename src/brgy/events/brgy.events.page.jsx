@@ -5,7 +5,7 @@ import Table from './manage_events/Table'
 import { useState } from 'react'
 import { DataTable } from '../../data/DataTable'
 import useGetEvent from '../../hooks/custom/useGetEvent'
-
+import AddModalEvents from './modals/add.modal.events';
 const BrgyEventsPage = () => {
   const isLoading = useGetEvent()
   const [data, setData] = useState(DataTable);
@@ -13,6 +13,16 @@ const BrgyEventsPage = () => {
   const [isOpen1, setIsOpen1] = useState(false)
   const [currentItem, setCurrentItem] = useState(null)
   const [selectedStatus, setSelectedStatus] = useState("Dashboard")
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+
+  const handleAddModalOpen = () => {
+    setIsAddModalOpen(true);
+  };
+
+  const handleAddModalClose = () => {
+    setIsAddModalOpen(false);
+  };
+
   const navigationItems = [
     { linkName: "Dashboard" },
     { linkName: "Metrics and analytics", },
@@ -139,7 +149,20 @@ const BrgyEventsPage = () => {
               <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
             </svg>
           </div>
-          <button className="inline-flex items-center justify-center h-10 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-emerald-500 hover:bg-emerald-600 focus:bg-emerald-700 disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none">
+          <button className="inline-flex items-center justify-center h-10 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-emerald-500 hover:bg-emerald-600 focus:bg-emerald-700 disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none"
+            onClick={handleAddModalOpen}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
+                <path d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12m10-8a8 8 0 1 0 0 16a8 8 0 0 0 0-16" />
+                <path d="M13 7a1 1 0 1 0-2 0v4H7a1 1 0 1 0 0 2h4v4a1 1 0 1 0 2 0v-4h4a1 1 0 1 0 0-2h-4z" />
+              </g>
+            </svg>
+
+            <span>Add Event</span>
+          </button>
+          <button className="inline-flex items-center justify-center h-10 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-red-500 hover:bg-red-600 focus:bg-red-700 disabled:cursor-not-allowed disabled:border-red-300 disabled:bg-red-300 disabled:shadow-none">
+
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -161,6 +184,7 @@ const BrgyEventsPage = () => {
         </div>
       </div>
       <Table />
+      <AddModalEvents isOpen={isAddModalOpen} onClose={handleAddModalClose} />
     </div>
   )
 
