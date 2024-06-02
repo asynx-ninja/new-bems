@@ -1,7 +1,7 @@
 # Barangay E-Service Management System
 
 A Centralized Barangay Information System for the Municipality of Rodriguez, Rizal.
-Created by Students of TUP-Manila (@rgrgogu, @andreinuguid, @hooseun, @dwaynesenpai, @nylechua)
+Created by Students of TUP-Manila (@rgrgogu, @andreinuguid, @Hooseun, @dwaynesenpai25, @nyle_chua)
 
 ### Tasks
 - Admin // Kiko
