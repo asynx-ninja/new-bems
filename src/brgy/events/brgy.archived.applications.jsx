@@ -1,7 +1,7 @@
 import React from 'react'
-import Tabs from './view_staff_event/application_table/Tabs'
+import Tabs from './view_events/application_table/Tabs'
 
-const Applications = () => {
+const BrgyArchivedApplications = () => {
     return (
         <div className='p-4 bg-gray-50'>
             <Tabs />
@@ -10,4 +10,4 @@ const Applications = () => {
     )
 }
 
-export default Applications
+export default BrgyArchivedApplications

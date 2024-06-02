@@ -1,7 +1,7 @@
 import React from 'react'
 import DefaultLayout from '../../layouts/DefaultLayout'
 
-const StaffDashboard = () => {
+const BrgyDashboard = () => {
     const acc_type = "Admin"
 
     const Layout = () => (
@@ -13,4 +13,4 @@ const StaffDashboard = () => {
     )
 }
 
-export default StaffDashboard
+export default BrgyDashboard

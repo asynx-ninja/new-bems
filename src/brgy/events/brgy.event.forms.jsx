@@ -1,9 +1,9 @@
 import React from 'react'
 
-const EventForms = () => {
+const brgyEventForms = () => {
   return (
     <div>event_forms</div>
   )
 }
 
-export default EventForms
+export default brgyEventForms

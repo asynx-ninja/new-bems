@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { DataTable } from '../../data/DataTable'
 import Breadcrumb from '../../components/breadcrumbs/Breadcrumb'
 
-const ArchivedEventsPage = () => {
+const BrgyArchivedEventsPage = () => {
     const [data, setData] = useState(DataTable);
     const [isOpen, setIsOpen] = useState(false)
     const [isOpen1, setIsOpen1] = useState(false)
@@ -178,4 +178,4 @@ const ArchivedEventsPage = () => {
     )
 }
 
-export default ArchivedEventsPage
+export default BrgyArchivedEventsPage

@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react'
-import EventDetails from '../../event.details';
-import EventForms from '../../event.forms';
-import Applications from '../../applications';
-import ArchivedApplications from '../../archived.applications';
+import BrgyEventDetails from '../../brgy.event.details';
+import BrgyEventForms from '../../brgy.event.forms';
+import BrgyApplications from '../../brgy.applications';
+import BrgyArchivedApplications from '../../brgy.archived.applications';
 
 const MainTabs = () => {
     const tabs = [
@@ -12,10 +12,10 @@ const MainTabs = () => {
         { tabName: 'Archived Applications', badge: 5 },
     ];
     const tabContent = [
-        { content: <EventDetails /> },
-        { content: <EventForms /> },
-        { content: <Applications /> },
-        { content: <ArchivedApplications /> },
+        { content: <BrgyEventDetails /> },
+        { content: <BrgyEventForms /> },
+        { content: <BrgyApplications /> },
+        { content: <BrgyArchivedApplications /> },
     ]
 
     const [tabSelected, setTabSelected] = useState({

@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { DataTable } from '../../data/DataTable'
 import useGetEvent from '../../hooks/custom/useGetEvent'
 
-const StaffEventsPage = () => {
+const BrgyEventsPage = () => {
   const isLoading = useGetEvent()
   const [data, setData] = useState(DataTable);
   const [isOpen, setIsOpen] = useState(false)
@@ -169,4 +169,4 @@ const StaffEventsPage = () => {
   )
 }
 
-export default StaffEventsPage
+export default BrgyEventsPage

@@ -1,16 +1,16 @@
 import React from 'react';
 import DefaultLayout from '../../layouts/DefaultLayout';
 import Breadcrumb from '../../components/breadcrumbs/Breadcrumb';
-import MainTabs from './view_staff_event/utils/MainTabs';
+import MainTabs from './view_events/utils/MainTabs';
 import { useEventContext } from '../../hooks/context/useEventContext';
 
-const ViewEvent = () => {
+const BrgyViewEvent = () => {
     const { event } = useEventContext();
 
     const breadcrumbs = [
         {
             path: "Events Management",
-            link: "/brgy_events_page"
+            link: "/brgy/events"
         },
         {
             path: "View Event",
@@ -36,4 +36,4 @@ const ViewEvent = () => {
     );
 };
 
-export default ViewEvent;
+export default BrgyViewEvent;

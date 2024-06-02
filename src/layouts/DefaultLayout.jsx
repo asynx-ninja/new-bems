@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SidebarItem from "../components/sidebar/SidebarItem";
 import { AdminDataSidebar } from "../data/AdminDataSidebar";
-import { StaffDataSidebar } from "../data/StaffDataSidebar";
+import { StaffDataSidebar } from "../data/BrgyDataSidebar";
 import SidebarHeader from "../components/sidebar/SidebarHeader";
 import SidebarAlert from "../components/sidebar/SidebarAlert";
 import SidebarFooter from "../components/sidebar/SidebarFooter";
@@ -58,7 +58,6 @@ export default function DefaultLayout({ component }) {
               <ul className="flex flex-1 flex-col gap-1 py-3">
                 {SidebarAccountType(credentials.user.account_type).map((item, idx) => (
                   <SidebarItem
-                    key={idx}
                     item={item}
                     setIsSideNavOpen={setIsSideNavOpen}
                   />
