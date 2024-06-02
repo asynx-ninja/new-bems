@@ -1,7 +1,7 @@
 # Barangay E-Service Management System
 
 A Centralized Barangay Information System for the Municipality of Rodriguez, Rizal.
-Created by Students of TUP-Manila (@rgrgogu, @andreinuguid, @hooseun, @dwaynesenpai, @nylechua)
+Created by Students of TUP-Manila (@rgrgogu, @andreinuguid, @Hooseun, @dwaynesenpai25, @nyle_chua)
 
 ### Tasks
 - Admin // Kiko
@@ -46,8 +46,13 @@ Created by Students of TUP-Manila (@rgrgogu, @andreinuguid, @hooseun, @dwaynesen
       - [ ] Archive Event Applications
     - [ ] Archive Events
     - [ ] Generate Reports
-  - [ ] Manage Services // Nyle
-    - [ ] Create Services
+  - [ ] Manage Services 
+    - [ ] Create Services // Nyle
+    - [ ] Services Table // Nyle
+      - [ ] View Service // Nyle
+      - [ ] View Document // Andrei
+        - [ ] Add Service Document
+        - [ ] Edit Service Document
     - [ ] View Service
       - [ ] Service Details
       - [ ] Service Forms
@@ -55,12 +60,19 @@ Created by Students of TUP-Manila (@rgrgogu, @andreinuguid, @hooseun, @dwaynesen
         - [ ] Chat Feature
         - [ ] Service Certificate Document in PDF
       - [ ] Archive Service Applications
-    - [ ] Archive Events
-    - [ ] Generate Reports
+    - [ ] Archive Events // Nyle
+    - [ ] Generate Reports // Nyle
   - [ ] Inquiries // Rimel
     - [ ] View Inquiry
     - [ ] Archive Inquiry
     - [ ] Chat Feature
+  - [ ] Patawag // Andrei
+    - [ ] Table
+      - [ ] Create Patawag
+      - [ ] View Patawag
+      - [ ] Edit Patawag (adding up residents)
+      - [ ] Chat Feature
+    - [ ] View Patawag
   - [ ] Manage Information 
     - [ ] Officials // Rimel
       - [ ] Generate Reports
