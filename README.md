@@ -54,7 +54,6 @@ Created by Students of TUP-Manila (@rgrgogu, @andreinuguid, @hooseun, @dwaynesen
       - [ ] Service Requests
         - [ ] Chat Feature
         - [ ] Service Certificate Document in PDF
-        - [ ] Service Request Document in PDF
       - [ ] Archive Service Applications
     - [ ] Archive Events
     - [ ] Generate Reports
