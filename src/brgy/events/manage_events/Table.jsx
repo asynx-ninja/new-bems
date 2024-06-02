@@ -118,6 +118,12 @@ const Table = ({ }) => {
                                     </svg>
                                 </button>
                             </th>
+                            <th scope="col" className="h-12 px-6 text-sm font-medium stroke-slate-700 text-slate-700">
+                                <button  className='flex  w-[40%] justify-center items-center'>
+                                    <span>Action</span>
+                                    
+                                </button>
+                            </th>
                         </tr>
 
                         {events && events.length > 0 ? (
