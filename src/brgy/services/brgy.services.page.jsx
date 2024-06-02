@@ -5,7 +5,7 @@ import Table from "./manage_services/Table";
 import { useState } from "react";
 import { DataTable } from "../../data/DataTable";
 import useGetEvent from "../../hooks/custom/useGetEvent";
-import CreateServiceModal from "./create_services/brgy.create.service";
+import CreateServiceModal from "./modals/brgy.create.service";
 
 const BrgyServicesPage = () => {
   const isLoading = useGetEvent();
@@ -14,6 +14,16 @@ const BrgyServicesPage = () => {
   const [isOpen1, setIsOpen1] = useState(false);
   const [currentItem, setCurrentItem] = useState(null);
   const [selectedStatus, setSelectedStatus] = useState("Dashboard");
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+
+  const handleAddModalOpen = () => {
+    setIsAddModalOpen(true);
+  };
+
+  const handleAddModalClose = () => {
+    setIsAddModalOpen(false);
+  };
+
   const navigationItems = [
     { linkName: "Dashboard" },
     { linkName: "Metrics and analytics" },
@@ -181,9 +191,8 @@ const BrgyServicesPage = () => {
           </div>
 
           <button
-            type="button"
-            data-hs-overlay="#hs-create-service-modal"
             className="inline-flex items-center justify-center h-10 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-emerald-500 hover:bg-emerald-600 focus:bg-emerald-700 disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none"
+            onClick={handleAddModalOpen}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -226,7 +235,7 @@ const BrgyServicesPage = () => {
         </div>
       </div>
       <Table />
-      <CreateServiceModal />
+      <CreateServiceModal isOpen={isAddModalOpen} onClose={handleAddModalClose} />
     </div>
     
   );
