@@ -12,7 +12,7 @@ import { Link, useLocation } from "react-router-dom";
 import useGetEvent from "../hooks/custom/useGetEvent";
 
 export default function DefaultLayout({ component }) {
-  const acc_type = "Admin"
+  const acc_type = "Brgy Admin"
   const url = useLocation().pathname.split("/")[1];
   const [isSideNavOpen, setIsSideNavOpen] = useState(false)
   const { theme } = useThemeContext();
@@ -58,7 +58,6 @@ export default function DefaultLayout({ component }) {
               <ul className="flex flex-1 flex-col gap-1 py-3">
                 {SidebarAccountType(acc_type).map((item, idx) => (
                   <SidebarItem
-                    key={idx}
                     item={item}
                     setIsSideNavOpen={setIsSideNavOpen}
                     acc_type={acc_type}
