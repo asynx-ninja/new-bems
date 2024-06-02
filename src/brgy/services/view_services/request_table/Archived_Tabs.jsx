@@ -1,16 +1,16 @@
 import React, { useState, useRef, useEffect } from "react";
 import Table from "./Table";
 import { DataTable } from "../../../../data/DataTable";
-import ArchiveRequestModal from "./modals/brgy.archive.request";
+import RestoreRequestModal from "./modals/brgy.restore.request";
 
-const Tabs = () => {
+const ArchivedTabs = () => {
   const [data, setData] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [isOpen1, setIsOpen1] = useState(false);
   const [currentItem, setCurrentItem] = useState(null);
   const [selectedStatus, setSelectedStatus] = useState("Dashboard");
   const status = ["For Review", "Cancelled", "Rejected", "Approved"];
-  const [isArchiveModalOpen, setIsArchiveModalOpen] = useState(false);
+  const [isRestoreModalOpen, setIsRestoreModalOpen] = useState(false);
 
   const navigationItems = [
     { linkName: "Dashboard" },
@@ -27,14 +27,6 @@ const Tabs = () => {
     currentTab: 1,
     noTabs: 3,
   });
-
-  const handleArchiveModalOpen = () => {
-    setIsArchiveModalOpen(true);
-  };
-
-  const handleArchiveModalClose = () => {
-    setIsArchiveModalOpen(false);
-  };
 
   useEffect(() => {
     const filter = () => {
@@ -82,6 +74,15 @@ const Tabs = () => {
   const handleChangeDropdown = (item) => {
     setSelectedStatus(item.linkName);
     setIsOpen(!isOpen);
+  };
+
+  
+  const handleRestoreModalOpen = () => {
+    setIsRestoreModalOpen(true);
+  };
+
+  const handleRestoreModalClose = () => {
+    setIsRestoreModalOpen(false);
   };
 
   return (
@@ -288,7 +289,7 @@ const Tabs = () => {
                   </div>
                   <button
                     className="inline-flex items-center justify-center h-10 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-emerald-500 hover:bg-emerald-600 focus:bg-emerald-700 disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none"
-                    onClick={handleArchiveModalOpen}
+                    onClick={handleRestoreModalOpen}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -306,7 +307,7 @@ const Tabs = () => {
                         d="M12 11v5m0 0 2-2m-2 2-2-2M3 6v1a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1Zm2 2v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8H5Z"
                       />
                     </svg>
-                    <span>Archive Request</span>
+                    <span>Restore Request</span>
                   </button>
                 </div>
               </div>
@@ -314,13 +315,13 @@ const Tabs = () => {
             </div>
           ))}
         </div>
-        <ArchiveRequestModal
-          isOpen={isArchiveModalOpen}
-          onClose={handleArchiveModalClose}
+        <RestoreRequestModal
+          isOpen={isRestoreModalOpen}
+          onClose={handleRestoreModalClose}
         />
       </section>
     </>
   );
 };
 
-export default Tabs;
+export default ArchivedTabs;

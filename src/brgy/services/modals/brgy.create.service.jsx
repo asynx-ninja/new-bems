@@ -23,7 +23,7 @@ function CreateServiceModal({ isOpen, onClose }) {
         {/* Modal content */}
         <header className="flex items-center p-3  bg-teal-700 ">
           <div className="flex justify-between items-center overflow-hidden rounded-t-2xl">
-            <h3 className="flex-1 text-lg font-medium text-white ml-3">
+            <h3 className="flex text-lg font-medium text-white ml-3">
               CREATE SERVICE
             </h3>
           </div>
@@ -199,11 +199,11 @@ function CreateServiceModal({ isOpen, onClose }) {
           </div>
 
           {/* Buttons */}
-          <div className="flex justify-center items-center gap-x-1 px-2 py-2 dark:border-gray-700 ">
+          <div className="flex justify-center items-center gap-x-1 px-2 py-2 bg-[#f7f7f7] dark:border-gray-700 ">
             <div className="sm:space-x-0 md:space-x-2 sm:space-y-2 md:space-y-0 w-full flex sm:flex-col md:flex-row justify-end">
               <button
                 type="button"
-                className="h-[2.5rem] py-1 px-10 gap-2 rounded-md text-sm font-base bg-pink-800 text-white shadow-sm"
+                className="h-[2.5rem] py-1 px-10 gap-2 rounded-md text-sm font-base bg-pink-800 hover:bg-pink-700 text-white shadow-sm"
                 data-hs-overlay="#hs-create-service-modal"
                 onClick={onClose}
               >
@@ -211,7 +211,7 @@ function CreateServiceModal({ isOpen, onClose }) {
               </button>
               <button
                 type="button"
-                className="h-[2.5rem] py-1 px-10 gap-2 rounded-md text-sm font-base bg-teal-900 text-white shadow-sm"
+                className="h-[2.5rem] py-1 px-10 gap-2 rounded-md text-sm font-base bg-teal-900 hover:bg-teal-800 text-white shadow-sm"
                 // onClick={handleSubmit}
               >
                 SUBMIT

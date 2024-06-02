@@ -6,6 +6,7 @@ import { useState } from "react";
 import { DataTable } from "../../data/DataTable";
 import useGetEvent from "../../hooks/custom/useGetEvent";
 import CreateServiceModal from "./modals/brgy.create.service";
+import ArchiveServiceModal from "./modals/brgy.archive.service";
 
 const BrgyServicesPage = () => {
   const isLoading = useGetEvent();
@@ -15,6 +16,7 @@ const BrgyServicesPage = () => {
   const [currentItem, setCurrentItem] = useState(null);
   const [selectedStatus, setSelectedStatus] = useState("Dashboard");
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+  const [isArchiveModalOpen, setIsArchiveModalOpen] = useState(false);
 
   const handleAddModalOpen = () => {
     setIsAddModalOpen(true);
@@ -22,6 +24,14 @@ const BrgyServicesPage = () => {
 
   const handleAddModalClose = () => {
     setIsAddModalOpen(false);
+  };
+
+  const handleArchiveModalOpen = () => {
+    setIsArchiveModalOpen(true);
+  };
+
+  const handleArchiveModalClose = () => {
+    setIsArchiveModalOpen(false);
   };
 
   const navigationItems = [
@@ -196,24 +206,22 @@ const BrgyServicesPage = () => {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              fill="none"
+              width="24"
+              height="24"
               viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="h-6 w-6"
-              aria-label="Dashboard icon"
-              role="graphics-symbol"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M12 11v5m0 0 2-2m-2 2-2-2M3 6v1a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1Zm2 2v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8H5Z"
-              />
+              <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
+                <path d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12m10-8a8 8 0 1 0 0 16a8 8 0 0 0 0-16" />
+                <path d="M13 7a1 1 0 1 0-2 0v4H7a1 1 0 1 0 0 2h4v4a1 1 0 1 0 2 0v-4h4a1 1 0 1 0 0-2h-4z" />
+              </g>
             </svg>
             <span>Create Service</span>
           </button>
 
-          <button className="inline-flex items-center justify-center h-10 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-emerald-500 hover:bg-emerald-600 focus:bg-emerald-700 disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none">
+          <button
+            className="inline-flex items-center justify-center h-10 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-pink-700 hover:bg-pink-800 focus:bg-pink-700 disabled:cursor-not-allowed disabled:border-red-300 disabled:bg-red-300 disabled:shadow-none"
+            onClick={handleArchiveModalOpen}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -235,9 +243,16 @@ const BrgyServicesPage = () => {
         </div>
       </div>
       <Table />
-      <CreateServiceModal isOpen={isAddModalOpen} onClose={handleAddModalClose} />
+      <CreateServiceModal
+        isOpen={isAddModalOpen}
+        onClose={handleAddModalClose}
+      />
+
+      <ArchiveServiceModal
+        isOpen={isArchiveModalOpen}
+        onClose={handleArchiveModalClose}
+      />
     </div>
-    
   );
 
   return <DefaultLayout component={<Layout />} />;

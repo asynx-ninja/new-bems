@@ -1,10 +1,10 @@
 import React from 'react'
-import Tabs from './view_services/request_table/Tabs'
+import ArchivedTabs from './view_services/request_table/Archived_Tabs'
 
 const BrgyArchivedRequests = () => {
     return (
         <div className='p-4 bg-gray-50'>
-            <Tabs />
+            <ArchivedTabs />
             {/* <Table /> */}
         </div>
     )
