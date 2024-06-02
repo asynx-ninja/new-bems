@@ -10,7 +10,7 @@ const ViewEvent = () => {
     const breadcrumbs = [
         {
             path: "Events Management",
-            link: "/brgy_events_page"
+            link: "/:brgy/events_page"
         },
         {
             path: "View Event",
