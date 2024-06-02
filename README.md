@@ -67,6 +67,13 @@ Created by Students of TUP-Manila (@rgrgogu, @andreinuguid, @Hooseun, @dwaynesen
     - [ ] View Inquiry
     - [ ] Archive Inquiry
     - [ ] Chat Feature
+  - [ ] Patawag // Andrei
+    - [ ] Table
+      - [ ] Create Patawag
+      - [ ] View Patawag
+      - [ ] Edit Patawag (adding up residents)
+      - [ ] Chat Feature
+    - [ ] View Patawag
   - [ ] Manage Information 
     - [ ] Officials // Rimel
       - [ ] Generate Reports
