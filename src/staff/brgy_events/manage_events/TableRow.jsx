@@ -1,35 +1,38 @@
-import React from 'react'
-import moment from 'moment'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import moment from 'moment';
+import { Link } from 'react-router-dom';
 import { useEventContext } from "../../../hooks/context/useEventContext";
 
 const TableRow = ({ data, checked, setChecked }) => {
     const { dispatch } = useEventContext();
 
     const handleView = (data) => {
-        dispatch({ type: 'SET_EVENT', payload: data })
-    }
+        console.log(data)
+        dispatch({ type: 'SET_EVENT', payload: data });
+    };
     
     const getBadge = (status) => {
         switch (status.toLowerCase()) {
             case 'for review':
                 return <span className="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded border border-yellow-300">
-                    {item.status}
-                </span>
+                    {status}
+                </span>;
             case 'cancelled':
                 return <span className="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded border border-gray-500">
-                    {item.status}
-                </span>
+                    {status}
+                </span>;
             case 'rejected':
                 return <span className="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded border border-red-400">
-                    {item.status}
-                </span>
+                    {status}
+                </span>;
             case 'approved':
                 return <span className="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded border border-green-400">
-                    {item.status}
-                </span>
+                    {status}
+                </span>;
+            default:
+                return null;
         }
-    }
+    };
 
     return (
         <tr className="border-b border-slate-200 hover:bg-slate-50">
@@ -45,7 +48,9 @@ const TableRow = ({ data, checked, setChecked }) => {
             <td className="px-6 py-4">{data.event_id}</td>
             <td className="px-6 py-4">{data.event_name}</td>
             <td className="px-6 py-4">{data.details}</td>
-            <td className="h-12 px-6 text-sm transition duration-300 border-slate-200 stroke-slate-500 text-slate-500 ">{moment(data.event_date).format('MMMM DD, YYYY')}</td>
+            <td className="h-12 px-6 text-sm transition duration-300 border-slate-200 stroke-slate-500 text-slate-500 ">
+                {moment(data.event_date).format('MMMM DD, YYYY')}
+            </td>
             <td className="h-12 px-6 text-sm transition duration-300 border-slate-200 stroke-slate-500 text-slate-500 ">
                 <div className="inline-flex shadow-sm" role="group">
                     <Link
@@ -77,22 +82,10 @@ const TableRow = ({ data, checked, setChecked }) => {
                         </svg>
                         <span>View</span>
                     </Link>
-                    {/* <button
-                        type="button"
-                        className="px-4 py-1.5 text-sm font-medium text-emerald-600 bg-transparent border-t border-b border-emerald-600 hover:text-white hover:bg-emerald-600 focus:bg-emerald-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none"
-                    >
-                        Settings
-                    </button>
-                    <button
-                        type="button"
-                        className="px-4 py-1.5 text-sm font-medium text-emerald-600 bg-transparent border border-emerald-600 rounded-e-lg hover:text-white hover:bg-emerald-600 focus:bg-emerald-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none"
-                    >
-                        Downloads
-                    </button> */}
                 </div>
             </td>
         </tr>
-    )
-}
+    );
+};
 
-export default TableRow
+export default TableRow;

@@ -7,11 +7,12 @@ export const EventReducer = (state, action) => {
         case "SET_EVENTS":
             return {
                 events: action.payload.result,
-                event: {},
+                event: null,
                 currentPage: action.payload.currentPage,
                 pageCount: action.payload.pageCount,
             };
         case "SET_EVENT":
+
             return {
                 ...state,
                 event: action.payload
@@ -27,11 +28,11 @@ export const EventContextProvider = ({ children }) => {
     // similar to useState but how we update the state object
     const [state, dispatch] = useReducer(EventReducer, {
         events: null,
-        event: {},
+        event: null,
         currentPage: 0,
         pageCount: 0,
     });
-
+    console.log(state)
     return (
         <EventContext.Provider value={{ ...state, dispatch }}>
             {children}
