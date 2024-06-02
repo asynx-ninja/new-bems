@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 import { useEventContext } from "../../../hooks/context/useEventContext";
 
 const TableRow = ({ data, checked, setChecked }) => {
-    const { dispatch } = useEventContext();
+    const {dispatch} = useEventContext();
 
     const handleView = (data) => {
-        console.log(data)
-        dispatch({ type: 'SET_EVENT', payload: data });
+        dispatch({ type: "SET_EVENT", payload: data })
+        localStorage.setItem('event', JSON.stringify(data))
     };
-    
+
     const getBadge = (status) => {
         switch (status.toLowerCase()) {
             case 'for review':

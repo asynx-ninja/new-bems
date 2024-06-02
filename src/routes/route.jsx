@@ -14,7 +14,7 @@ const pages = [
     { path: '/events_page', element: <EventsPage /> },
     { path: '/view_event', element: <ViewEvent /> },
     { path: '/archived_events', element: <ArchivedEventsPage /> },
-    { path: '/brgy_events_page', element: <StaffEventsPage /> },
+    { path: '/:brgy/events_page', element: <StaffEventsPage /> },
     { path: '/view_brgy_event', element: <ViewStaffEvent /> },
     { path: '/archived_brgy_events', element: <ArchivedStaffEventsPage /> },
     { path: '/themes', element: <ThemesPage /> }

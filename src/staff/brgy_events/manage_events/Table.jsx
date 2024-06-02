@@ -2,10 +2,8 @@ import React, { useState, useEffect } from 'react';
 import TableRow from './TableRow';
 import Pagination from './Pagination';
 import { useEventContext } from '../../../hooks/context/useEventContext';
-import useGetEvent from '../../../hooks/custom/useGetEvent';
 
 const Table = ({ }) => {
-    const isLoading = useGetEvent();
     const { events } = useEventContext();
     const [data, setData] = useState([]);
 
@@ -129,7 +127,7 @@ const Table = ({ }) => {
                         ) : (
                             <tr>
                                 <td colSpan="5" className="text-center py-4">
-                                    {isLoading ? "Loading..." : "No Data Available"}
+                                    Loading...
                                 </td>
                             </tr>
                         )}

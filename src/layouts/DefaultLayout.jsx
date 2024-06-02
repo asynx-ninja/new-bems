@@ -12,7 +12,6 @@ import { Link, useLocation } from "react-router-dom";
 import useGetEvent from "../hooks/custom/useGetEvent";
 
 export default function DefaultLayout({ component }) {
-  const isLoading = useGetEvent();
   const acc_type = "Admin"
   const url = useLocation().pathname.split("/")[1];
   const [isSideNavOpen, setIsSideNavOpen] = useState(false)

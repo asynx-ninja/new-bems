@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom'
 import Table from './manage_events/Table'
 import { useState } from 'react'
 import { DataTable } from '../../data/DataTable'
+import useGetEvent from '../../hooks/custom/useGetEvent'
 
 const StaffEventsPage = () => {
+  const isLoading = useGetEvent()
   const [data, setData] = useState(DataTable);
   const [isOpen, setIsOpen] = useState(false)
   const [isOpen1, setIsOpen1] = useState(false)
@@ -158,7 +160,7 @@ const StaffEventsPage = () => {
           </button>
         </div>
       </div>
-      <Table filtered={data} />
+      <Table />
     </div>
   )
 

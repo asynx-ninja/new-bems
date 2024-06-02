@@ -32,7 +32,17 @@ export const EventContextProvider = ({ children }) => {
         currentPage: 0,
         pageCount: 0,
     });
+
+    useEffect(() => {
+        const event = JSON.parse(localStorage.getItem("event"));
+
+        if (event) {
+            dispatch({ type: "SET_EVENT", payload: event })
+        }
+    }, [])
+
     console.log(state)
+
     return (
         <EventContext.Provider value={{ ...state, dispatch }}>
             {children}
