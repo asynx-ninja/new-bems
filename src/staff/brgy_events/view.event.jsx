@@ -2,8 +2,14 @@ import React from 'react'
 import DefaultLayout from '../../layouts/DefaultLayout'
 import Breadcrumb from '../../components/breadcrumbs/Breadcrumb'
 import MainTabs from './view_staff_event/utils/MainTabs'
+import { useEventContext } from '../../hooks/context/useEventContext'
 
 const ViewEvent = () => {
+    const { event } = useEventContext();
+    const isFormLoading = useGetEventForm(event.id);
+    const isAppplicationLoading = useGetEventApplication(event.id);
+    const isArchivedLoading = useGetEventArchivedApplication(event.id);
+
     const breadcrumbs = [
         {
             path: "Events Management",

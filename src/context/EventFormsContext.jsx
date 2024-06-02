@@ -4,14 +4,14 @@ export const EventContext = createContext();
 
 export const EventReducer = (state, action) => {
     switch (action.type) {
-        case "SET_EVENTS":
+        case "SET_EVENT_FORMS":
             return {
                 events: action.payload.result,
                 event: {},
                 currentPage: action.payload.currentPage,
                 pageCount: action.payload.pageCount,
             };
-        case "SET_EVENT":
+        case "SET_EVENT_FORM":
             return {
                 ...state,
                 event: action.payload
