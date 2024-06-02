@@ -46,7 +46,7 @@ export const AdminDataSidebar = [
         badge: 2,
     },
     {
-        link: '/',
+        link: '/view_inquiry',
         type: "menu",
         icon: (<svg
             xmlns="http://www.w3.org/2000/svg"
@@ -175,6 +175,115 @@ export const AdminDataSidebar = [
         name: 'Manage Information',
         badge: null,
     },
+    // {
+    //     link: '/',
+    //     type: "menu",
+    //     icon: (<svg
+    //         xmlns="http://www.w3.org/2000/svg"
+    //         fill="none"
+    //         viewBox="0 0 24 24"
+    //         strokeWidth="1.5"
+    //         stroke="currentColor"
+    //         className="h-6 w-6"
+    //         aria-label="Dashboard icon"
+    //         role="graphics-symbol"
+    //     >
+    //         <path
+    //             strokeLinecap="round"
+    //             strokeLinejoin="round"
+    //             d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"
+    //         />
+    //     </svg>),
+    //     name: 'Manage Barangay',
+    //     badge: null,
+    // },
+    {
+        link: '/',
+        type: "dropdown",
+        icon: (<svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="h-6 w-6"
+            aria-label="Dashboard icon"
+            role="graphics-symbol"
+        >
+            <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M20 6h3v2h-1v11h1v2H1v-2h1V8H1V6h3V4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1zm0 2H4v11h3v-7h2v7h2v-7h2v7h2v-7h2v7h3zM6 5v1h12V5z"
+            />
+        </svg>),
+        children: [
+            {
+                link: "/",
+                icon: (<svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="-2 -1 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="h-6 w-6"
+                    aria-label="Dashboard icon"
+                    role="graphics-symbol"
+                >
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12.432 0c1.34 0 2.01.912 2.01 1.957c0 1.305-1.164 2.512-2.679 2.512c-1.269 0-2.009-.75-1.974-1.99C9.789 1.436 10.67 0 12.432 0M8.309 20c-1.058 0-1.833-.652-1.093-3.524l1.214-5.092c.211-.814.246-1.141 0-1.141c-.317 0-1.689.562-2.502 1.117l-.528-.88c2.572-2.186 5.531-3.467 6.801-3.467c1.057 0 1.233 1.273.705 3.23l-1.391 5.352c-.246.945-.141 1.271.106 1.271c.317 0 1.357-.392 2.379-1.207l.6.814C12.098 19.02 9.365 20 8.309 20"
+                    />
+                </svg>),
+                name: 'Add Barangay',
+                badge: null,
+            },
+            {
+                link: "/",
+                icon: (<svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="h-6 w-6"
+                    aria-label="Dashboard icon"
+                    role="graphics-symbol"
+                >
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M4.5 17H4a1 1 0 0 1-1-1 3 3 0 0 1 3-3h1m0-3.05A2.5 2.5 0 1 1 9 5.5M19.5 17h.5a1 1 0 0 0 1-1 3 3 0 0 0-3-3h-1m0-3.05a2.5 2.5 0 1 0-2-4.45m.5 13.5h-7a1 1 0 0 1-1-1 3 3 0 0 1 3-3h3a3 3 0 0 1 3 3 1 1 0 0 1-1 1Zm-1-9.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z"
+                    />
+                </svg>),
+                name: 'Manage Services',
+                badge: null,
+            },
+            {
+                link: "/",
+                icon: (<svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="h-6 w-6"
+                    aria-label="Dashboard icon"
+                    role="graphics-symbol"
+                >
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 11H4m15.5 5a.5.5 0 0 0 .5-.5V8a1 1 0 0 0-1-1h-3.75a1 1 0 0 1-.829-.44l-1.436-2.12a1 1 0 0 0-.828-.44H8a1 1 0 0 0-1 1M4 9v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-7a1 1 0 0 0-1-1h-3.75a1 1 0 0 1-.829-.44L9.985 8.44A1 1 0 0 0 9.157 8H5a1 1 0 0 0-1 1Z"
+                    />
+                </svg>),
+                name: 'Barangay Reports',
+                badge: null,
+            },
+        ],
+        name: 'Manage Barangay',
+        badge: null,
+    },
     {
         link: '/',
         type: "menu",
@@ -191,11 +300,11 @@ export const AdminDataSidebar = [
             <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"
+                d="M22 21H2V3h2v16h2v-9h4v9h2V6h4v13h2v-5h4z"
             />
         </svg>),
-        name: 'Manage Barangay',
-        badge: null,
+        name: 'Reports/Analytics',
+        badge: 2,
     },
     {
         link: '/',
