@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import Table from './manage_events/table/Table'
 import { useState } from 'react'
 import { DataTable } from '../../data/DataTable'
-import { useThemeContext } from '../../hooks/useThemeContext'
+import { useThemeContext } from '../../hooks/context/useThemeContext'
 
 const EventsPage = () => {
   const { theme } = useThemeContext();

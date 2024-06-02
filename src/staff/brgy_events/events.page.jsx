@@ -1,7 +1,7 @@
 import React from 'react'
 import DefaultLayout from '../../layouts/DefaultLayout'
 import { Link } from 'react-router-dom'
-import Table from '../brgy_events/staff_manage_events/Table'
+import Table from './manage_events/Table'
 import { useState } from 'react'
 import { DataTable } from '../../data/DataTable'
 

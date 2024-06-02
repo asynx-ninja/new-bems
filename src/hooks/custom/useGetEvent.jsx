@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { useEventContext } from "../context/useEventContext";
+import axios from 'axios';
+
 
 const useGetEvent = () => {
     const [loading, setLoading] = useState(true);
@@ -8,7 +10,8 @@ const useGetEvent = () => {
     useEffect(() => {
         const fetchEvents = async () => {
             try {
-                const response = await axios.get(`${process.env.REACT_APP_ACCESS_KEY}/events/brgys_events/`);
+                const response = await axios.get(`${import.meta.env.VITE_API}/events/brgys_events/?brgy=BALITE&isArchived=false`);
+                console.log(`${import.meta.env.VITE_API}/events/brgys_events/`)
                 dispatch({ type: "SET_EVENTS", payload: response.data })
             } catch (error) {
                 console.error('Error fetching events:', error);

@@ -2,7 +2,7 @@ import React from 'react'
 import DefaultLayout from '../../layouts/DefaultLayout'
 import { themes } from "../../data/DataTheme"
 import { useState, useEffect } from 'react'
-import { useThemeContext } from '../../hooks/useThemeContext'
+import { useThemeContext } from '../../hooks/context/useThemeContext'
 import { memo } from 'react'
 
 const ThemesPage = () => {

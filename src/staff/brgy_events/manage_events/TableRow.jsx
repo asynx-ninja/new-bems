@@ -2,7 +2,7 @@ import React from 'react'
 import moment from 'moment'
 import { Link } from 'react-router-dom'
 
-const TableRow = ({ item, checked, setChecked }) => {
+const TableRow = ({ data, checked, setChecked }) => {
     const getBadge = (status) => {
         switch (status.toLowerCase()) {
             case 'for review':
@@ -35,17 +35,14 @@ const TableRow = ({ item, checked, setChecked }) => {
                     id="id-c01"
                 />
             </td>
-            <td className="h-12 px-6 text-sm transition duration-300 border-slate-200 stroke-slate-500 text-slate-500 ">{item.name}</td>
-            <td className="h-12 px-6 text-sm transition duration-300 border-slate-200 stroke-slate-500 text-slate-500 ">{item.title}</td>
-            <td className="h-12 px-6 text-sm transition duration-300 border-slate-200 stroke-slate-500 text-slate-500 ">{item.company}</td>
-            <td className="h-12 px-6 text-sm transition duration-300 border-slate-200 stroke-slate-500 text-slate-500 ">
-                {getBadge(item.status)}
-            </td>
-            <td className="h-12 px-6 text-sm transition duration-300 border-slate-200 stroke-slate-500 text-slate-500 ">{moment(item.event_date).format('MMMM DD, YYYY')}</td>
+            <td className="px-6 py-4">{data.event_id}</td>
+            <td className="px-6 py-4">{data.event_name}</td>
+            <td className="px-6 py-4">{data.details}</td>  
+            <td className="h-12 px-6 text-sm transition duration-300 border-slate-200 stroke-slate-500 text-slate-500 ">{moment(data.event_date).format('MMMM DD, YYYY')}</td>
             <td className="h-12 px-6 text-sm transition duration-300 border-slate-200 stroke-slate-500 text-slate-500 ">
                 <div className="inline-flex shadow-sm" role="group">
                     <Link
-                        to="/view_staff_event"
+                        to="/view_brgy_event"
                         type="button"
                         className="flex justify-center items-center gap-1.5 px-4 py-1.5 text-sm font-medium text-emerald-600 bg-transparent border border-emerald-600 rounded-lg hover:text-white hover:bg-emerald-600 focus:bg-emerald-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none"
                     >
