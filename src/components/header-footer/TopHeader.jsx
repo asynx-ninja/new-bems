@@ -1,6 +1,6 @@
 import React from 'react'
 import Notification from '../notification/Notification'
-import { useThemeContext } from '../../hooks/useThemeContext'
+import { useThemeContext } from '../../hooks/context/useThemeContext'
 
 const TopHeader = ({ isSideNavOpen, setIsSideNavOpen }) => {
     const { theme } = useThemeContext();

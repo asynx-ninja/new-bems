@@ -3,7 +3,7 @@ import NotificationItem from './NotificationItem'
 import NotificationHeader from './NotificationHeader'
 import NotificationFooter from './NotificationFooter'
 import { DataNotif } from '../../data/DataNotif'
-import { useThemeContext } from '../../hooks/useThemeContext'
+import { useThemeContext } from '../../hooks/context/useThemeContext'
 
 const Notification = () => {
     const [isOpen, setIsOpen] = useState(false)

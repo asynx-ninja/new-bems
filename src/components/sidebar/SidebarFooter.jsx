@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { useThemeContext } from '../../hooks/useThemeContext';
+import { useThemeContext } from '../../hooks/context/useThemeContext';
 
 const SidebarFooter = () => {
     const { theme } = useThemeContext();

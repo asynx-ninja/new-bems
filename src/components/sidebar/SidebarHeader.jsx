@@ -1,5 +1,5 @@
 import React from 'react'
-import { useThemeContext } from '../../hooks/useThemeContext'
+import { useThemeContext } from '../../hooks/context/useThemeContext'
 
 const SidebarHeader = () => {
     const { theme } = useThemeContext();
