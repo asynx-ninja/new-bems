@@ -46,18 +46,23 @@ Created by Students of TUP-Manila (@rgrgogu, @andreinuguid, @Hooseun, @dwaynesen
       - [ ] Archive Event Applications
     - [ ] Archive Events
     - [ ] Generate Reports
-  - [ ] Manage Services // Nyle
-    - [ ] Create Services
+  - [ ] Manage Services 
+    - [ ] Create Services // Nyle
+    - [ ] Services Table // Nyle
+      - [ ] View Service // Nyle
+      - [ ] View Document // Andrei
+        - [ ] Add Service Document
+        - [ ] Edit Service Document
     - [ ] View Service
-      - [ ] Service Details
-      - [ ] Service Forms
-      - [ ] Service Requests
-        - [ ] Chat Feature
-        - [ ] Service Certificate Document in PDF
-        - [ ] Service Request Document in PDF
+      - [ ] Service Details // Nyle
+      - [ ] Service Forms // Nyle
+      - [ ] Service Requests // Nyle
+        - [ ] Chat Feature // Nyle
+        - [ ] Service Certificate Document in PDF // Andrei
+        - [ ] Service Request Document in PDF // Andrei
       - [ ] Archive Service Applications
-    - [ ] Archive Events
-    - [ ] Generate Reports
+    - [ ] Archive Events // Nyle
+    - [ ] Generate Reports // Nyle
   - [ ] Inquiries // Rimel
     - [ ] View Inquiry
     - [ ] Archive Inquiry
