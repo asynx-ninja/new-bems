@@ -4,12 +4,12 @@ import { DataTable } from "../../data/InquiryData";
 import { useState } from "react";
 
 const BrgyInquiries = () => {
-  const [data, setData] = useState(DataTable);
+  // const [data, setData] = useState(DataTable);
 
   const Layout = () => (
     <div>
       This is Inquiries
-      <Table filtered={data} />
+      {/* <Table filtered={data} /> */}
     </div>
   );
 

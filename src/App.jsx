@@ -1,41 +1,51 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import { useAuthContext } from './hooks/context/useAuthContext';
-import LoginPage from './home/login.page';
-import EventsPage from './admin/events/events.page';
-import ViewEvent from './admin/events/view.event';
-import ArchivedEventsPage from './admin/events/archived_events.page';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useAuthContext } from "./hooks/context/useAuthContext";
+import LoginPage from "./home/login.page";
+import EventsPage from "./admin/events/events.page";
+import ViewEvent from "./admin/events/view.event";
+import ArchivedEventsPage from "./admin/events/archived_events.page";
 
 // BRGY
 
-
-
-import ThemesPage from './components/themes/themes.page';
-import BrgyDashboard from './brgy/dashboard/BrgyDashboard';
-import BrgyEventsPage from './brgy/events/brgy.events.page';
-import BrgyViewEvent from './brgy/events/brgy.view.event.page';
-import BrgyArchivedEventsPage from './brgy/events/brgy.archived.events.page';
-import BrgyInquiries from './brgy/inquiries/brgy.inquiries.page';
-import BrgyPatawag from './brgy/patawags/brgy.patawag.page';
-import BrgyInformation from './brgy/mange_information/brgy.info.page';
-import BrgyOfficials from './brgy/mange_information/brgy.officials.page';
-import BrgyStaff from './brgy/mange_information/brgy.staff.page';
-import BrgyResidents from './brgy/mange_information/brgy.residents.page';
-import BrgyProfileSettings from './brgy/profile_settings/brgy.profile.page';
+import ThemesPage from "./components/themes/themes.page";
+import BrgyDashboard from "./brgy/dashboard/BrgyDashboard";
+import BrgyEventsPage from "./brgy/events/brgy.events.page";
+import BrgyViewEvent from "./brgy/events/brgy.view.event.page";
+import BrgyArchivedEventsPage from "./brgy/events/brgy.archived.events.page";
+import BrgyInquiries from "./brgy/inquiries/brgy.inquiries.page";
+import BrgyPatawag from "./brgy/patawags/brgy.patawag.page";
+import BrgyInformation from "./brgy/mange_information/brgy.info.page";
+import BrgyOfficials from "./brgy/mange_information/brgy.officials.page";
+import BrgyStaff from "./brgy/mange_information/brgy.staff.page";
+import BrgyResidents from "./brgy/mange_information/brgy.residents.page";
+import BrgyProfileSettings from "./brgy/profile_settings/brgy.profile.page";
+import BrgyServicesPage from "./brgy/services/brgy.services.page";
+import BrgyViewService from "./brgy/services/brgy.view.service.page";
+import BrgyArchivedServicesPage from "./brgy/services/brgy.archived.services.page";
 
 function App() {
   const { credentials } = useAuthContext();
 
   return (
-    <div className='App'>
+    <div className="App">
       <BrowserRouter>
         <div className="pages">
           <Routes>
             <Route
               path="/"
-              element={!credentials ? <LoginPage /> :
-                <Navigate to={(credentials.user.account_type === "Barangay Staff" || credentials.user.account_type === "Barangay Admin") ?
-                  '/brgy/dashboard' : '/admin/dashboard'
-                } />
+              element={
+                !credentials ? (
+                  <LoginPage />
+                ) : (
+                  <Navigate
+                    to={
+                      credentials.user.account_type === "Barangay Staff" ||
+                      credentials.user.account_type === "Barangay Admin"
+                        ? "/brgy/dashboard"
+                        : "/admin/dashboard"
+                    }
+                  />
+                )
               }
             />
             <Route
@@ -48,7 +58,9 @@ function App() {
             />
             <Route
               path="/municipal/archived_events"
-              element={credentials ? <ArchivedEventsPage /> : <Navigate to="/" />}
+              element={
+                credentials ? <ArchivedEventsPage /> : <Navigate to="/" />
+              }
             />
 
             {/* STAFF */}
@@ -66,7 +78,25 @@ function App() {
             />
             <Route
               path="/brgy/archived_event"
-              element={credentials ? <BrgyArchivedEventsPage /> : <Navigate to="/" />}
+              element={
+                credentials ? <BrgyArchivedEventsPage /> : <Navigate to="/" />
+              }
+            />
+
+            <Route
+              path="/brgy/services"
+              element={credentials ? <BrgyServicesPage /> : <Navigate to="/" />}
+            />
+
+             <Route
+              path="/brgy/view_service"
+              element={credentials ? <BrgyViewService /> : <Navigate to="/" />}
+            />
+            <Route
+              path="/brgy/archived_services"
+              element={
+                credentials ? <BrgyArchivedServicesPage /> : <Navigate to="/" />
+              }
             />
 
             <Route
@@ -97,7 +127,9 @@ function App() {
 
             <Route
               path="/brgy/settings"
-              element={credentials ? <BrgyProfileSettings /> : <Navigate to="/" />}
+              element={
+                credentials ? <BrgyProfileSettings /> : <Navigate to="/" />
+              }
             />
             {/* <Route
               path="/:brgy/view_brgy_event"
@@ -115,7 +147,7 @@ function App() {
         </div>
       </BrowserRouter>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
